@@ -77,6 +77,7 @@ int main (){
 		else if(menu == 5){
 			
 			int soption;
+			int isdata= 0;
 			printf("\n**검색 옵션**\n");
 			printf("1. 이름검색\n");
 			printf("2. 가격검색\n");
@@ -86,15 +87,17 @@ int main (){
 			getchar();
 			switch(soption){
 				case 1 : 
-					searchByName(fruit, index);
+					isdata = searchByName(fruit, index);
 					break;
 				case 2 : 
-					searchByPrice(fruit, index);
+					isdata = searchByPrice(fruit, index);
 					break;
 				case 3 :
-					searchByRate(fruit, index);
+					isdata = searchByRate(fruit, index);
 					break;
 			}
+			if(isdata == 0)
+				printf("=> 검색된 데이터가 없습니다.\n");
 
 		}
 		else if(menu == 6){

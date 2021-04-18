@@ -33,13 +33,13 @@ int updateProduct(Product *p);
 int deleteProduct(Product *p);
 
 // 제품의 이름을 통해 검색하여 정보를 출력한다.
-void searchByName(Product *p, int count);
+int searchByName(Product *p, int count);
 
 // 제품의 가격을 통해 검색하여 정보를 출력한다.
-void searchByPrice(Product *p, int count);
+int searchByPrice(Product *p, int count);
 
 // 제품의 별저을 통해 검핵하여 정보를 출력한다.
-void searchByRate(Product *p, int count);
+int searchByRate(Product *p, int count);
 
 // 목록에 담겨있는 제품들을 파일에 저장한다.
 void saveProduct(Product *p, int count);

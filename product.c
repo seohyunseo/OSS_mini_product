@@ -71,7 +71,7 @@ int selectMenu(){
         return menu;
 }
 
-void searchByName(Product *p, int count){
+int searchByName(Product *p, int count){
 	int scount = 0;
 	char search[20];
 
@@ -89,13 +89,13 @@ void searchByName(Product *p, int count){
 			scount++;
 		}
 	}
-	if(scount == 0)
-		printf("=> 검색된 데이터가 없습니다.");
+
 	printf("\n");
+	return scount;
 }
 
 	
-void searchByPrice(Product *p, int count){
+int searchByPrice(Product *p, int count){
 	int scount = 0;
 	int smin, smax;
 
@@ -115,13 +115,14 @@ void searchByPrice(Product *p, int count){
 			scount++;
 		}
 	}
-	if(scount == 0)
-		printf("=>검색된 데이터가 없습니다.");
+	
+
 	printf("\n");
+	return scount;
 }
 
 	
-void searchByRate(Product *p, int count){
+int searchByRate(Product *p, int count){
 	int scount = 0;
 	int srate;
 
@@ -138,9 +139,8 @@ void searchByRate(Product *p, int count){
 			scount++;
 		}
 	}
-	if(scount == 0)
-		printf("=>검색된 데이터가 없습니다.");
 	printf("\n");
+	return scount;
 }
 void saveProduct(Product *p, int count){
 	FILE *fp;
