@@ -165,13 +165,13 @@ int loadProduct(Product *p){
 		printf("=>파일이 존재하지 않습니다.\n");
 	else{
 		for(; i < 100; i++){
-			fscanf(fp,"%[^\n]", p[i].name);
+			fscanf(fp,"%[^\t]", p[i].name);
 			if(feof(fp))
 				break;
-			fscanf(fp, "%d", &p[i].weight);
-			fscanf(fp, "%d", &p[i].price);
-			fscanf(fp, "%d", &p[i].rate[0]);
-			fscanf(fp, "%d\n", &p[i].num_rate);
+			fscanf(fp, "%d ", &p[i].weight);
+			fscanf(fp, "%d ", &p[i].price);
+			fscanf(fp, "%d ", &p[i].rate[0]);
+			fscanf(fp, "%d ", &p[i].num_rate);
 		}
 	printf("=>로딩에 성공하였습니다.\n");
 	}
