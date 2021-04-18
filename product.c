@@ -71,6 +71,11 @@ int selectMenu(){
         return menu;
 }
 
+void listName(){
+	
+        printf("**************************************************\n");
+	printf("No.\t이름\t무게(g)\t가격\t별점\t별점갯수\n");
+}
 int searchByName(Product *p, int count){
 	int scount = 0;
 	char search[20];
@@ -78,8 +83,7 @@ int searchByName(Product *p, int count){
 	printf("검색할 이름은? ");
 	scanf("%[^\n]", search);
 
-        printf("**************************************************\n");
-	printf("No.\t이름\t무게(g)\t가격\t별점\t별점갯수\n");
+        listName();
 	for(int i = 0; i < count; i++){
 		if(p[i].price == -1)
 			continue;
@@ -93,7 +97,6 @@ int searchByName(Product *p, int count){
 	printf("\n");
 	return scount;
 }
-
 	
 int searchByPrice(Product *p, int count){
 	int scount = 0;
@@ -104,8 +107,7 @@ int searchByPrice(Product *p, int count){
 	scanf("%d", &smin);
 	printf("최대 가격은? ");
 	scanf("%d", &smax);
-        printf("**************************************************\n");
-	printf("No.\t이름\t무게(g)\t가격\t별점\t별점갯수\n");
+        listName();
 	for(int i = 0; i < count; i++){
 		if(p[i].price == -1)
 			continue;
@@ -115,8 +117,6 @@ int searchByPrice(Product *p, int count){
 			scount++;
 		}
 	}
-	
-
 	printf("\n");
 	return scount;
 }
@@ -128,8 +128,7 @@ int searchByRate(Product *p, int count){
 
 	printf("검색할 별점은?(1~5) ");
 	scanf("%d", &srate);
-        printf("**************************************************\n");
-	printf("No.\t이름\t무게(g)\t가격\t별점\t별점갯수\n");
+        listName();
 	for(int i = 0; i < count; i++){
 		if(p[i].price == -1)
 			continue;

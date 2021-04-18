@@ -44,6 +44,7 @@ int searchByRate(Product *p, int count);
 // 목록에 담겨있는 제품들을 파일에 저장한다.
 void saveProduct(Product *p, int count);
 
+void listName();
 // 제품의 번호를 선택한다. 선택된 번호를 통해 특정 제품에 대한 delete, update 함수를 실행한다.
 //int selectProductNo(Product *p[], int count);
 #endif
