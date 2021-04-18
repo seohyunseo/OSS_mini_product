@@ -63,6 +63,7 @@ int selectMenu(){
         printf("5. 이름검색\n");
         printf("6. 가격검색\n");
         printf("7. 별점검색\n");
+        printf("8. 제품저장\n");
         printf("0. 종료\n");
         printf("\n=>원하는 메뉴는? ");
         scanf("%d", &menu);
@@ -143,6 +144,19 @@ void searchByRate(Product *p, int count){
 		printf("=>검색된 데이터가 없습니다.");
 	printf("\n");
 }
-void saveProduct(Product *p, int count);
+void saveProduct(Product *p, int count){
+	FILE *fp;
+	fp = fopen("product.txt", "wt");
+	
+        fprintf(fp,"**************************************************\n");
+	fprintf(fp,"No.\t이름\t무게(g)\t가격\t별점\t별점갯수\n");
+	for(int i = 0; i < count; i++){
+		if(p[i].price == -1)
+			continue;
+        	fprintf(fp,"%s\t%d\t%d\t%d\t%d\n", p[i].name, p[i].weight, p[i].price, p[i].rate[0], p[i].num_rate);
+	}
+	fclose(fp);
+	printf("=>제품 리스트가 저장되었습니다.\n");
+}
 int loadProduct(Product *p);
 

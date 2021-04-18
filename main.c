@@ -80,6 +80,9 @@ int main (){
 		else if(menu == 7){
 			searchByRate(fruit, index);
 		}
+		else if(menu == 8){
+			saveProduct(fruit, index);
+		}
 	}	
 	printf("=>프로그램이 종료되었습니다.\n");
 	return 0;
