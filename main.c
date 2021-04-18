@@ -75,15 +75,29 @@ int main (){
 
 		}
 		else if(menu == 5){
-			searchByName(fruit, index);
+			
+			int soption;
+			printf("\n**검색 옵션**\n");
+			printf("1. 이름검색\n");
+			printf("2. 가격검색\n");
+			printf("3. 별점검색\n");
+			printf("\n=>원하는 검색옵션은? ");
+			scanf("%d", &soption);
+			getchar();
+			switch(soption){
+				case 1 : 
+					searchByName(fruit, index);
+					break;
+				case 2 : 
+					searchByPrice(fruit, index);
+					break;
+				case 3 :
+					searchByRate(fruit, index);
+					break;
+			}
+
 		}
 		else if(menu == 6){
-			searchByPrice(fruit, index);
-		}
-		else if(menu == 7){
-			searchByRate(fruit, index);
-		}
-		else if(menu == 8){
 			saveProduct(fruit, index);
 		}
 	}	
