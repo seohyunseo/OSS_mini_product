@@ -62,6 +62,7 @@ int selectMenu(){
         printf("4. 제품삭제\n");
         printf("5. 이름검색\n");
         printf("6. 가격검색\n");
+        printf("7. 별점검색\n");
         printf("0. 종료\n");
         printf("\n=>원하는 메뉴는? ");
         scanf("%d", &menu);
@@ -121,7 +122,27 @@ void searchByPrice(Product *p, int count){
 }
 
 	
-void searchByRate(Product *p, int count);
+void searchByRate(Product *p, int count){
+	int scount = 0;
+	int srate;
+
+	printf("검색할 별점은?(1~5) ");
+	scanf("%d", &srate);
+        printf("**************************************************\n");
+	printf("No.\t이름\t무게(g)\t가격\t별점\t별점갯수\n");
+	for(int i = 0; i < count; i++){
+		if(p[i].price == -1)
+			continue;
+		if(p[i].rate[0] == srate){
+			printf("%d\t", i+1);
+			readProduct(p[i]);
+			scount++;
+		}
+	}
+	if(scount == 0)
+		printf("=>검색된 데이터가 없습니다.");
+	printf("\n");
+}
 void saveProduct(Product *p, int count);
 int loadProduct(Product *p);
 
