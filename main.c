@@ -18,7 +18,7 @@ int main (){
 		menu = selectMenu();
 		if(menu == 0)
 			break;
-		if ((menu == 1 || menu == 3 || menu == 4) && count == 0){
+		if ((menu == 1 || menu == 3 || menu == 4|| menu == 5) && count == 0){
             		printf("=> 데이터가 없습니다.\n");
 			continue;}
 		else if(menu == 2)
@@ -70,6 +70,9 @@ int main (){
 			}
 		
 
+		}
+		else if(menu == 5){
+			searchByName(fruit, index);
 		}
 	}	
 	printf("=>프로그램이 종료되었습니다.\n");

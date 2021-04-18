@@ -33,16 +33,16 @@ int updateProduct(Product *p);
 int deleteProduct(Product *p);
 
 // 제품의 이름을 통해 검색하여 정보를 출력한다.
-void searchByName(Product *p[], int count);
+void searchByName(Product *p, int count);
 
 // 제품의 가격을 통해 검색하여 정보를 출력한다.
-void searchByPrice(Product *p[], int count);
+void searchByPrice(Product *p, int count);
 
 // 제품의 별저을 통해 검핵하여 정보를 출력한다.
-void searchByRate(Product *p[], int count);
+void searchByRate(Product *p, int count);
 
 // 목록에 담겨있는 제품들을 파일에 저장한다.
-void saveProduct(Product *p[], int count);
+void saveProduct(Product *p, int count);
 
 // 제품의 번호를 선택한다. 선택된 번호를 통해 특정 제품에 대한 delete, update 함수를 실행한다.
 //int selectProductNo(Product *p[], int count);

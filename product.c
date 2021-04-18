@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 typedef struct{
         char name[20];
@@ -59,6 +60,7 @@ int selectMenu(){
         printf("2. 제품추가\n");
         printf("3. 제품수정\n");
         printf("4. 제품삭제\n");
+        printf("5. 제품검색\n");
         printf("0. 종료\n");
         printf("\n=>원하는 메뉴는? ");
         scanf("%d", &menu);
@@ -67,4 +69,33 @@ int selectMenu(){
 
         return menu;
 }
+
+void searchByName(Product *p, int count){
+	int scount = 0;
+	char search[20];
+
+	printf("검색할 이름은? ");
+	scanf("%[^\n]", search);
+
+        printf("**************************************************\n");
+	printf("No.\t이름\t무게(g)\t가격\t별점\t별점갯수\n");
+	for(int i = 0; i < count; i++){
+		if(p[i].price == -1)
+			continue;
+		if(strstr(p[i].name, search)){
+			printf("%d\t", i+1);
+			readProduct(p[i]);
+			scount++;
+		}
+	}
+	if(scount == 0)
+		printf("=> 검색된 데이터가 없습니다.");
+	printf("\n");
+}
+
+	
+void searchByPrice(Product *p, int count);
+void searchByRate(Product *p, int count);
+void saveProduct(Product *p, int count);
+int loadProduct(Product *p);
 
