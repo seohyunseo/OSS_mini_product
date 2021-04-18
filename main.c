@@ -13,6 +13,9 @@ int main (){
 	
 	int count = 0, index = 0; 
 	int menu;
+	
+	count = loadProduct(fruit);
+	index = count;
 
 	while(1){
 		menu = selectMenu();

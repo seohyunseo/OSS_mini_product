@@ -148,8 +148,6 @@ void saveProduct(Product *p, int count){
 	FILE *fp;
 	fp = fopen("product.txt", "wt");
 	
-        fprintf(fp,"**************************************************\n");
-	fprintf(fp,"No.\t이름\t무게(g)\t가격\t별점\t별점갯수\n");
 	for(int i = 0; i < count; i++){
 		if(p[i].price == -1)
 			continue;
@@ -158,5 +156,27 @@ void saveProduct(Product *p, int count){
 	fclose(fp);
 	printf("=>제품 리스트가 저장되었습니다.\n");
 }
-int loadProduct(Product *p);
+
+int loadProduct(Product *p){
+	int i = 0;
+	FILE *fp;
+	fp = fopen("product.txt", "rt");
+	if(fp == NULL)
+		printf("=>파일이 존재하지 않습니다.\n");
+	else{
+		for(; i < 100; i++){
+			fscanf(fp,"%[^\n]", p[i].name);
+			if(feof(fp))
+				break;
+			fscanf(fp, "%d", &p[i].weight);
+			fscanf(fp, "%d", &p[i].price);
+			fscanf(fp, "%d", &p[i].rate[0]);
+			fscanf(fp, "%d\n", &p[i].num_rate);
+		}
+	printf("=>로딩에 성공하였습니다.\n");
+	}
+	fclose(fp);
+
+	return i;
+}	
 
